@@ -3,7 +3,7 @@ import socket
 import json
 import struct
 import os
-import time
+# import time
 from pathlib import Path
 
 port = 8888
@@ -21,7 +21,7 @@ def get_file(conn):
         rev = conn.recv(4)
         header_size = struct.unpack('i', rev)[0]
     except (struct.error, ConnectionResetError):
-        print("An error occurred while receiving the header size.")
+        print("在接收文件头部长度时发生错误")
         return
     # 发送确认消息
     conn.send(b'size_ok')
@@ -41,7 +41,7 @@ def get_file(conn):
                 file_size -= len(content)
                 f.write(content)
     except IOError as e:
-        print(f"An error occurred while writing the file: {e}")
+        print(f"在写入文件时发生错误: {e}")
         return
     print('接收文件完成')
 
@@ -91,8 +91,13 @@ def put_file(conn, file_path):
         print('文件不存在')
 
 
-def get_screen(conn):
-    pass
+def screen_shot(conn):
+    rev = conn.recv(1024)
+    if rev != b'screen':
+        print('截图失败')
+        return
+    conn.send(b'start')
+    get_file(conn)
 
 
 def main():
@@ -108,14 +113,14 @@ def main():
         try:
             conn, address = socket_server.accept()
         except socket.error as e:
-            print(f"An error occurred: {e}")
+            print(f"发生错误: {e}")
             continue
         print(f'接收到客户端连接，来自{address}')
         while True:
             try:
                 data = input('>>> ').encode('UTF-8')
             except UnicodeEncodeError as e:
-                print(f"An error occurred: {e}")
+                print(f"发生错误: {e}")
                 continue
             if data == b'exit':
                 conn.send(data)
@@ -132,7 +137,7 @@ def main():
                 put_file(conn, file_path)
                 continue
             elif command[0] == b'screen':
-                get_screen(conn)
+                screen_shot(conn)
                 continue
             else:
                 reply = conn.recv(102400000).decode("UTF-8")
