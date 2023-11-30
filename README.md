@@ -1,5 +1,5 @@
 # Socket_Remote_Connect
-基于Socket的远程控制程序
+一个基于Python-Socket的远程控制程序
 
 实现功能：
 - 远程命令执行
