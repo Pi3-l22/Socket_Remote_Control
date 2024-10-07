@@ -1,6 +1,6 @@
 # Socket Remote Connect
 
-English | [简体中文](README_CN.md)
+[English](README.md) | [简体中文](README_CN.md)
 
 A Python-based remote control program using sockets.
 
