@@ -4,7 +4,7 @@
 
 一个基于Python Socket的远程控制程序。
 
-项目的详细介绍可以参见我的博客文章：[Pi3'Notes](https://blog.pi3.fun/post/2023/11/%E5%9F%BA%E4%BA%8Esocket%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F/)
+项目的详细介绍可以参见我的博客文章：[Pi3's Notes](https://blog.pi3.fun/post/2023/11/%E5%9F%BA%E4%BA%8Esocket%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F/)
 
 ## 功能
 
