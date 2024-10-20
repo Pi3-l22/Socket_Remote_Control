@@ -4,7 +4,7 @@
 
 A Python-based remote control program using sockets.
 
-For a detailed introduction to the project, please see my blog post: [Pi3'Notes](https://blog.pi3.fun/post/2023/11/%E5%9F%BA%E4%BA%8Esocket%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F/)
+For a detailed introduction to the project, please see my blog post: [Pi3's Notes](https://blog.pi3.fun/post/2023/11/%E5%9F%BA%E4%BA%8Esocket%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F/)
 
 ## Features
 
